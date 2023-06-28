@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="es">
+      <body className="p-5 bg-[url('/colores.jpg')]">{children}</body>
     </html>
   )
 }
