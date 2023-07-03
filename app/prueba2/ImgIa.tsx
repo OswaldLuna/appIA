@@ -6,18 +6,26 @@ export function ImageIA({descripcion, onButtonClick}){
 
     let [imgSrc, setImgSrc] = useState('')
 
-    
+
     useEffect(() => {
+
+
 		if(descripcion != ''){
+			setImgSrc('')
 			const fetchData = async () => setImgSrc(await query(`${descripcion} ${Math.random()}`));
         	fetchData()
+			
 		}
+
+
         
     }, [onButtonClick])
+
+
     
     
     return (
-        <Image  src={imgSrc} width={300} height={300} alt=''/>
+        imgSrc === '' ? <p className="text-white">Cargando imagen...</p> : <Image  src={imgSrc} width={300} height={300} alt=''/>
     )
 
 }
